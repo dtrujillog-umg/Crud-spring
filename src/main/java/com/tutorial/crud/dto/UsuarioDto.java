@@ -35,6 +35,10 @@ public class UsuarioDto {
         this.tipoUsuario = tipoUsuario;
     }
 
+    public UsuarioDto() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }

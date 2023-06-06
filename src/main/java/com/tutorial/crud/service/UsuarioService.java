@@ -33,11 +33,12 @@ public class UsuarioService {
         return usuarioRepository.findByEmail(email);
     }
 
-    public void save(Usuario usuarioDto) {
+    public void save(UsuarioDto usuarioDto) {
         Usuario usuario = new Usuario(usuarioDto.getNombre(), usuarioDto.getEmail(), usuarioDto.getPassword());
         usuario.setTipoUsuario(usuarioDto.getTipoUsuario());
         usuarioRepository.save(usuario);
     }
+
 
     public void delete(int id) {
         usuarioRepository.deleteById(id);
@@ -60,5 +61,19 @@ public class UsuarioService {
     }
 
     public void update(int id, UsuarioDto usuarioDto) {
+        Optional<Usuario> usuarioOptional = usuarioRepository.findById(id);
+        if (usuarioOptional.isPresent()) {
+            Usuario usuario = usuarioOptional.get();
+            usuario.setNombre(usuarioDto.getNombre());
+            usuario.setEmail(usuarioDto.getEmail());
+            usuario.setPassword(usuarioDto.getPassword());
+            usuario.setTipoUsuario(usuarioDto.getTipoUsuario());
+            usuarioRepository.save(usuario);
+        }
+    }
+
+
+    public Usuario autenticarUsuario(String nombreUsuario, String contrasena) {
+        return null;
     }
 }
