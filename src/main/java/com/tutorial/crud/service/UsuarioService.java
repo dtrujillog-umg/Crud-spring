@@ -33,7 +33,7 @@ public class UsuarioService {
         return usuarioRepository.findByEmail(email);
     }
 
-    public void save(UsuarioDto usuarioDto) {
+    public void save(Usuario usuarioDto) {
         Usuario usuario = new Usuario(usuarioDto.getNombre(), usuarioDto.getEmail(), usuarioDto.getPassword());
         usuario.setTipoUsuario(usuarioDto.getTipoUsuario());
         usuarioRepository.save(usuario);

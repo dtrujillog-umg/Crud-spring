@@ -1,16 +1,15 @@
 package com.tutorial.crud.dto;
 
-public class Mensaje {
+public class MensajeAutenticacion {
     private String mensaje;
     private String tipoUsuario;
 
-    public Mensaje(String mensaje, String tipoUsuario) {
-        this.mensaje = mensaje;
-        this.tipoUsuario = tipoUsuario;
+    public MensajeAutenticacion() {
     }
 
-    public Mensaje(String camposInválidos) {
-
+    public MensajeAutenticacion(String mensaje, String tipoUsuario) {
+        this.mensaje = mensaje;
+        this.tipoUsuario = tipoUsuario;
     }
 
     public String getMensaje() {
