@@ -34,6 +34,15 @@ public class ReservaService {
         reservaRepository.deleteById(id);
     }
 
+    public Reserva crearReserva(Reserva reserva) {
+        return null;
+    }
+
+    public Reserva guardarReserva(Reserva reserva) {
+        Reserva o = null;
+        return o;
+    }
+
     // Puedes agregar más métodos según tus necesidades
 
 }
